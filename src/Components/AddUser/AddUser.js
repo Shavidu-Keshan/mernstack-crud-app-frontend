@@ -10,6 +10,14 @@ function AddUser() {
     age: "",
     address: "",
   });
+  const handleChange = (e)=>{
+    setInputs((prevState)=> ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+    }));
+  };
+
+
   return (
     <div>
       <Nav />
