@@ -1,34 +1,52 @@
+/* Nav.css */
 .home-ul {
-  list-style-type: none; /* No bullets for list items */
-  margin: 0; /* No margin around the list */
-  padding: 0; /* No padding around the list */
-  display: flex; /* Arrange items in a row */
-  justify-content: center; /* Center the list items horizontally */
-  background-color: #333; /* Dark background for the navigation bar */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #2c3e50; /* User-friendly dark blue background */
+  display: flex;
+  justify-content: center; /* Center the entire list */
+  align-items: center;
+  height: 60px;
 }
 
-/* Navigation Items Styles */
 .home-ll {
-  margin: 0 15px; /* Space between each navigation item */
-  padding: 10px 20px; /* Padding inside each item for a larger clickable area */
-  color: #ADD8E6; /* Light blue text color for visibility */
-  text-align: center; /* Center the text within each item */
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  padding: 0;
+  margin: 0 10px; /* Small margin for spacing */
 }
 
-/* Hover Effect for Navigation Items */
-.home-ll:hover {
-  background-color: #575757; /* Slightly lighter background when hovered */
-  cursor: pointer; /* Pointer cursor indicates that the item is clickable */
+.home-ll a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  text-decoration: none; /* Removes underline */
+  font-size: 18px;
+  width: 150px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  border-radius: 4px;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Heading Styles within Navigation Items */
+.home-ll a:hover {
+  background: #34495e; /* Slightly darker shade on hover */
+  transform: scale(1.05);
+}
+
 .home-ll h1 {
-  font-size: 18px; /* Moderate size for the text */
-  margin: 0; /* No margin, keeping text aligned */
-  text-transform: uppercase; /* Make all letters uppercase for consistency */
-  font-weight: normal; /* Use normal font weight for readability */
+  margin: 0;
+  font-size: 20px;
+  font-weight: normal;
 }
+
+.home-ll a.active {
+  background: #1abc9c; /* User-friendly teal color for active link */
+  font-weight: bold;
+  border-bottom: none; /* No bottom border */
+}
+
+
 
 
   
