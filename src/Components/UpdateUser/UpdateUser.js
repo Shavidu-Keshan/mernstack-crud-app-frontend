@@ -1,36 +1,116 @@
-import React, { useEffect, uses, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router";
-import { useNavigate } from "react-router";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function UpdateUser() {
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState({
+    name: "",
+    gmail: "",
+    age: "",
+    address: "",
+  });
   const history = useNavigate();
-  const id = useParams().id;
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get("http://localhost:5000/users/${id}")
+        .get(`http://localhost:5000/users/${id}`)
         .then((res) => res.data)
-        .then((data) => setInputs());
+        .then((data) => {
+          setInputs({
+            name: data.name || "",
+            gmail: data.gmail || "",
+            age: data.age || "",
+            address: data.address || "",
+          });
+        })
+        .catch((err) => console.error("Error fetching user data: ", err));
     };
     fetchHandler();
   }, [id]);
 
   const sendRequest = async () => {
-    await axios.put("http://localhost:5000/users/${id}", {
-      name: String(inputs.name),
-      gmail: String(inputs.gmail),
-      age: Number(inputs.age),
-      address: String(inputs.address),
-    });
+    await axios
+      .put(`http://localhost:5000/users/${id}`, {
+        name: String(inputs.name),
+        gmail: String(inputs.gmail),
+        age: String(inputs.age),
+        address: String(inputs.address),
+      })
+      .then((res) => res.data)
+      .catch((err) => console.error("Error updating user: ", err));
+  };
+
+  const handleChange = (e) => {
+    setInputs((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission
+    console.log(inputs);
+    sendRequest().then(() => history("/userdetails")); // Navigate to the details page after update
   };
 
   return (
     <div>
-      <h1>UpdateUser</h1>
+      <h1>Update User</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Name:</label>
+          <br />
+          <input
+            type="text"
+            name="name"
+            onChange={handleChange}
+            value={inputs.name}
+            required
+          />
+          <br />
+        </div>
+        <div>
+          <label>Gmail:</label>
+          <br />
+          <input
+            type="email"
+            name="gmail"
+            onChange={handleChange}
+            value={inputs.gmail}
+            required
+          />
+          <br />
+        </div>
+        <div>
+          <label>Age:</label>
+          <br />
+          <input
+            type="number"
+            name="age"
+            onChange={handleChange}
+            value={inputs.age}
+            required
+          />
+          <br />
+        </div>
+        <div>
+          <label>Address:</label>
+          <br />
+          <input
+            type="text"
+            name="address"
+            onChange={handleChange}
+            value={inputs.address}
+            required
+          />
+          <br />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 }

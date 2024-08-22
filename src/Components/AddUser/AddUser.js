@@ -17,17 +17,18 @@ function AddUser() {
         [e.target.name]: e.target.value,
     }));
   };
-  const handlesubmit = (e)=>{
+  const handlesubmit = async (e)=>{
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(()=>history('userdetails'))
-  }
+    await sendRequest();
+    history('/userdetails');
+  };
 
   const sendRequest = async()=>{
     await axios.post("http://localhost:5000/users",{
         name: String (inputs.name),
         gmail: String (inputs.gmail),
-        age: Number (inputs.age),
+        age: String (inputs.age),
         address: String (inputs.address),
 
     }).then(res => res.data);
