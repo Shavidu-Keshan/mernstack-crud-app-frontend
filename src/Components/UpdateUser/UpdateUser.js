@@ -10,7 +10,8 @@ function UpdateUser() {
     address: "",
   });
   const history = useNavigate();
-  const { id } = useParams();
+  const { id } = useParams()
+  
   
 
   useEffect(() => {
@@ -45,14 +46,18 @@ function UpdateUser() {
     setInputs((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
+      
     }));
   };
+  
+
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     console.log(inputs); // Debugging: Check current state
     sendRequest().then(() => history("/userdetails")); // Navigate to the details page after update
   };
+  
   
 
   return (
@@ -108,7 +113,7 @@ function UpdateUser() {
           <br />
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit" >Submit</button>
         </div>
       </form>
     </div>
