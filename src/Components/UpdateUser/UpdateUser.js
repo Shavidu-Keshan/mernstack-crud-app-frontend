@@ -11,20 +11,19 @@ function UpdateUser() {
   });
   const history = useNavigate();
   const { id } = useParams();
+  
 
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
         .get(`http://localhost:5000/users/${id}`)
-        .then((res) => res.data)
-        .then((data) => {
-          setInputs({
-            name: data.name || "",
-            gmail: data.gmail || "",
-            age: data.age || "",
-            address: data.address || "",
-          });
-        })
+        .then((res)=>res.data.user)
+        .then((user)=>setInputs(
+          {name:user.name,
+          gmail:user.gmail,
+          age:user.age,
+          address:user.address}
+        ))
         .catch((err) => console.error("Error fetching user data: ", err));
     };
     fetchHandler();
@@ -51,9 +50,10 @@ function UpdateUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
-    console.log(inputs);
+    console.log(inputs); // Debugging: Check current state
     sendRequest().then(() => history("/userdetails")); // Navigate to the details page after update
   };
+  
 
   return (
     <div>

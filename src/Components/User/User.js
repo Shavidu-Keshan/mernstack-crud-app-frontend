@@ -15,6 +15,7 @@ function User(props) {
       <Link to={`/userdetails/${_id}`}>Update</Link>
 
 
+
       <button>Delete:</button>
     </div>
   );
