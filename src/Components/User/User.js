@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 function User(props) {
   const { _id, name, gmail, age, address } = props.user;
+
+  
   return (
     <div>
       <h1>user display</h1>
