@@ -49,11 +49,13 @@ function Users() {
 
    const handleSendReport = () => {
     //Create the whatsapp Chat url
-    const phoneNumber = "+94719988968";
+    const whatsappNumber = "+94719988968";
     const message = `Selected User Reports`
-    const whatsappUrl = `https://web.whatsapp.com/swnd?phone=${phoneNumber}&text=${encodeURIComponent(
-
+    const whatsappUrl = `https://web.whatsapp.com/swnd?phone=${whatsappNumber}&text=${encodeURIComponent(
+      message
     )}` ; 
+    //open the whatsapp chat in new Window
+    window.open(whatsappUrl,"_blank");
    }
 
   return (
@@ -82,6 +84,8 @@ function Users() {
       </div>
       )}
       <button onClick={handlePrint}>Download Report</button>
+      <br></br>
+      <button onClick={handleSendReport }>Send WhatsApp Message</button>
     </div>
   );
 }
