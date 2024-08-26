@@ -20,6 +20,12 @@ function Nav() {
         <Link to="/userdetails"className="active home-a">
             <h1>user details</h1>
             </Link>
+        
+        </li>
+        <li className='home-ll'>
+        <Link to="/regi"className="active home-a">
+            <h1>Register</h1>
+            </Link>
         </li>
       </ul>
     </div>

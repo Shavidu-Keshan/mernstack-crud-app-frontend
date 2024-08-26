@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Nav from "../Nav/Nav";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import './AddUser.css'; // Add the .css extension
+
 
 function AddUser() {
   const history = useNavigate();

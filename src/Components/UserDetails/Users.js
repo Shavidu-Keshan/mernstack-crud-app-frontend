@@ -3,6 +3,7 @@ import Nav from "../Nav/Nav";
 import axios from "axios";
 import User from "../User/User";
 import { useReactToPrint } from "react-to-print";
+import './users.css';
 
 const url="http://localhost:5000/users";
 
