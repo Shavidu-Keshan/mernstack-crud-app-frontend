@@ -45,8 +45,16 @@ function Users() {
       setUsers(filteredUsers);
       setNoResults(filteredUsers.length === 0);
     });
-  }
-   
+  };
+
+   const handleSendReport = () => {
+    //Create the whatsapp Chat url
+    const phoneNumber = "+94719988968";
+    const message = `Selected User Reports`
+    const whatsappUrl = `https://web.whatsapp.com/swnd?phone=${phoneNumber}&text=${encodeURIComponent(
+
+    )}` ; 
+   }
 
   return (
     <div>
