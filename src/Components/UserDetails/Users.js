@@ -40,7 +40,7 @@ function Users() {
       const filteredUsers = data.users.filter((user) =>
       Object.values(user).some((field)=>
          
-      field.toString().tolowerCase().includes(searchQuery.toLowerCase())
+      field.toString().toLowerCase().includes(searchQuery.toLowerCase())
       ))
       setUsers(filteredUsers);
       setNoResults(filteredUsers.length === 0);
@@ -59,6 +59,11 @@ function Users() {
 
       </input>
       <button onClick={handleSearch}>Search</button>
+      {noResults ?(
+        <div>
+          <p>No Users Found</p>
+        </div>
+      ):(
       <div ref={ComponentsRef}>
         {users && users.map((user , i) => (
           <div key={i}>
@@ -67,6 +72,7 @@ function Users() {
 
         ))};
       </div>
+      )}
       <button onClick={handlePrint}>Download Report</button>
     </div>
   );
