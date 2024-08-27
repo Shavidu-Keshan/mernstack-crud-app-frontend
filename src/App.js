@@ -19,6 +19,7 @@ function App() {
           <Route path="/adduser" element={<AddUser />} />
           <Route path="/userdetails" element={<Users />} />
           <Route path="/regi" element={<Register />} />
+          <Route path="/log" element={<Login />} />
           <Route path="/userdetails/:id" element={<UpdateUser />} />
 
         </Routes>
