@@ -1,62 +1,84 @@
-/* Container styles */
-.users-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Heading styles */
-  .users-container h1 {
-    text-align: center;
-    color: #333;
-    font-family: 'Arial', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Input field styles */
-  .users-container input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  /* Button styles */
-  .users-container button {
-    padding: 10px 20px;
-    margin: 10px 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .users-container button:hover {
-    background-color: #45a049;
-  }
-  
-  .users-container .no-results {
-    color: red;
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 20px;
-  }
-  
-  /* User item styles */
-  .users-container .user-item {
-    background-color: #fff;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
+.nav-container {
+  background-color: #b3c9fc; /* White background for a clean look */
+  display: flex;
+  justify-content: space-between; /* Space between navigation links and buttons */
+  align-items: center;
+  padding: 0 20px;
+  height: 70px; /* Slightly taller for a spacious feel */
+  border-bottom: 2px solid #ddd; /* Subtle bottom border for separation */
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 20px; /* Increased margin for better spacing */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; /* Dark text color for high contrast */
+  text-decoration: none; /* Removes underline */
+  font-size: 12px; /* Larger font size for readability */
+  padding: 10px 20px; /* Padding for larger clickable area */
+  border-radius: 4px; /* Slightly rounded corners */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #f0f0f0; /* Light grey background on hover */
+  color: #000; /* Slightly darker text color on hover */
+}
+
+.nav-link.active {
+  background: #5bc0de; /* Light blue color for active link */
+  color: #ffffff; /* White text for active link */
+  font-weight: bold; /* Bold text to highlight active link */
+  border-bottom: none; /* No bottom border */
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none; /* Removes underline */
+  font-size: 16px; /* Font size for buttons */
+  background: #5cb85c; /* Green color for buttons */
+  padding: 10px 20px; /* Adequate padding for button size */
+  border-radius: 4px; /* Rounded corners for buttons */
+  margin-left: 15px; /* Spacing between buttons */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #4cae4c; /* Darker green shade on hover */
+  transform: scale(1.05); /* Slightly larger button on hover */
+}
+
+/* Custom styles for different links */
+.nav-link.home-link {
+  color: #1a73e8; /* Blue for Home link */
+}
+
+.nav-link.adduser-link {
+  color: #ff9800; /* Amber for Add User link */
+}
+
+.nav-link.userdetails-link {
+  color: #673ab7; /* Deep purple for User Details link */
+}
+
+

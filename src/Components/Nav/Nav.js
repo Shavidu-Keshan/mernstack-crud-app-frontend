@@ -1,41 +1,37 @@
-import React from 'react'
-import './Nav.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Nav.css';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <div>
-      <ul className="home-ul">
-        <li className='home-ll'>
-            <Link to="/mainhome"className="active home-a">
-            <h1>home</h1>
-            </Link>
+    <div className="nav-container">
+      <ul className="nav-links">
+        <li className='nav-item'>
+          <Link to="/mainhome" className="nav-link">
+            <h1>Home</h1>
+          </Link>
         </li>
-        <li className='home-ll'>
-        <Link to="/adduser"className="active home-a">
-            <h1>ADD user</h1>
-            </Link>
+        <li className='nav-item'>
+          <Link to="/adduser" className="nav-link">
+            <h1>Add User</h1>
+          </Link>
         </li>
-        <li className='home-ll'>
-        <Link to="/userdetails"className="active home-a">
-            <h1>user details</h1>
-            </Link>
-        
-        </li>
-        <li className='home-ll'>
-        <Link to="/regi"className="active home-a">
-            <h1>Register</h1>
-            </Link>
-        </li>
-        <li className='home-ll'>
-        <Link to="/log"className="active home-a">
-            <h1>Login</h1>
-            </Link>
+        <li className='nav-item'>
+          <Link to="/userdetails" className="nav-link">
+            <h1>User Details</h1>
+          </Link>
         </li>
       </ul>
+      <div className="nav-buttons">
+        <Link to="/regi" className="nav-button">
+          Register
+        </Link>
+        <Link to="/log" className="nav-button">
+          Login
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Nav
-
+export default Nav;

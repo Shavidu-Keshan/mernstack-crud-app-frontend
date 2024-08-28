@@ -1,69 +1,54 @@
-import React, { useState } from 'react';
-import Nav from "../Nav/Nav"; 
+import React, { useState } from "react";
+import Nav from "../Nav/Nav";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function login() {
-  const history = useNavigate(); // Initialize useNavigate
+function Login() {
+  const history = useNavigate();
   const [user, setUser] = useState({
     name: "",
     gmail: "",
     
   });
 
+  // Define sendRequest function
+  const sendRequest = async () => {
+    return await axios
+      .post("http://localhost:5000/login", {
+        gmail: String(user.gmail),
+        password: String(user.password),
+      })
+      .then((res) => res.data);
+  };
+
+  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
 
-  const sendRequest = async () => {
-    await axios
-      .post("http://localhost:5000/Login", {
-        
-        gmail: String(user.gmail),
-        password: String(user.password),
-      })
-      .then((res) => res.data)
-      .catch((err) => {
-        throw new Error(err.response?.data?.message || "Registration failed");
-      });
-  };
-
-  const handlesubmit = async(e) => {
+  // Handle form submission
+  const handlesubmit = async (e) => {
     e.preventDefault();
-    try{
+    try {
       const response = await sendRequest();
-      if(response.status === "ok") {
-        alert("Login Success");
+      if (response.status === "ok") {
+        alert("Login success");
         history("/userdetails");
-
-      }else{
-        alert("Login eror");
+      } else {
+        alert("Login error");
       }
-
-      }catch(err){
-        alert("eror" + err.message);
-      }
-    
-    
+    } catch (err) {
+      alert("Error: " + err.message);
+    }
   };
 
+  // Properly close the function before the return statement
   return (
     <div>
-      <Nav /> 
+      <Nav />
       <h1>User Login</h1>
       <form onSubmit={handlesubmit}>
-        <label>Name</label>
-        <br />
-        <input
-          type="text"
-          value={user.name}
-          onChange={handleInputChange}
-          name="name"
-          required
-        />
-        <br />  
-        <br />
         <label>Gmail</label>
         <br />
         <input
@@ -92,5 +77,4 @@ function login() {
   );
 }
 
-export default login;
-
+export default Login;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Nav from "../Nav/Nav"; 
+import Nav from "../Nav/Nav";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Make sure to import axios
+import axios from "axios"; // Don't forget to import axios!
 
 function Register() {
   const history = useNavigate();
@@ -11,27 +11,25 @@ function Register() {
     password: "",
   });
 
+  // Define sendRequest outside of handlesubmit
+  const sendRequest = async () => {
+    await axios
+      .post("http://localhost:5000/register", {
+        name: String(user.name),
+        gmail: String(user.gmail), // Correctly access user properties
+        password: String(user.password), // Correctly access user properties
+      })
+      .then((res) => res.data);
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
 
-  const sendRequest = async () => {
-    await axios
-      .post("http://localhost:5000/register", {
-        name: String(user.name),
-        gmail: String(user.gmail),
-        password: String(user.password),
-      })
-      .then((res) => res.data)
-      .catch((err) => {
-        throw new Error(err.response?.data?.message || "Registration failed");
-      });
-  };
-
   const handlesubmit = (e) => {
     e.preventDefault();
-    
+
     sendRequest()
       .then(() => {
         alert("Register Success");
@@ -87,3 +85,4 @@ function Register() {
 }
 
 export default Register;
+

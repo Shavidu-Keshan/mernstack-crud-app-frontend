@@ -1,21 +1,24 @@
-/* Nav.css */
-.home-ul {
+.nav-container {
+  background-color: #2c3e50; /* Dark blue background */
+  padding: 0 20px;
+}
+
+.nav-ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #2c3e50; /* User-friendly dark blue background */
   display: flex;
-  justify-content: center; /* Center the entire list */
+  justify-content: space-between; /* Space between items */
   align-items: center;
   height: 60px;
 }
 
-.home-ll {
+.nav-item {
   padding: 0;
-  margin: 0 10px; /* Small margin for spacing */
+  margin: 0 10px;
 }
 
-.home-ll a {
+.nav-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,27 +26,44 @@
   text-align: center;
   text-decoration: none; /* Removes underline */
   font-size: 18px;
-  width: 150px; /* Fixed width */
-  height: 50px; /* Fixed height */
+  height: 50px;
   border-radius: 4px;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.home-ll a:hover {
+.nav-link:hover {
   background: #34495e; /* Slightly darker shade on hover */
   transform: scale(1.05);
 }
 
-.home-ll h1 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: normal;
-}
-
-.home-ll a.active {
-  background: #1abc9c; /* User-friendly teal color for active link */
+.nav-link.active {
+  background: #1abc9c; /* Teal color for active link */
   font-weight: bold;
   border-bottom: none; /* No bottom border */
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none; /* Removes underline */
+  font-size: 16px;
+  background: #e74c3c; /* Red color for buttons */
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-left: 10px; /* Spacing between buttons */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #c0392b; /* Slightly darker shade on hover */
+  transform: scale(1.05);
 }
 
 
