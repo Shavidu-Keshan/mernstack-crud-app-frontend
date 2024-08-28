@@ -1,70 +1,75 @@
+/* Nav.css */
+
+/* Container for the entire navbar */
 .nav-container {
   background-color: #2c3e50; /* Dark blue background */
-  padding: 0 20px;
+  display: flex;
+  justify-content: space-between; /* Space between navigation links and buttons */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Horizontal padding for spacing */
+  height: 60px; /* Fixed height for the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.nav-ul {
-  list-style-type: none;
+/* Styling for the list of navigation links */
+.nav-links {
+  list-style-type: none; /* Remove bullet points */
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: space-between; /* Space between items */
+  display: flex; /* Display links horizontally */
   align-items: center;
-  height: 60px;
+  flex-grow: 1; /* Allow the nav-links section to grow to take available space */
 }
 
+/* Individual navigation items */
 .nav-item {
-  padding: 0;
-  margin: 0 10px;
+  margin: 0 15px; /* Space between navigation items */
 }
 
+/* Link styling */
 .nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  text-decoration: none; /* Removes underline */
-  font-size: 18px;
-  height: 50px;
-  border-radius: 4px;
-  transition: background 0.3s ease, transform 0.3s ease;
+  color: #ecf0f1; /* Light grey text color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 12px; /* Font size for links */
+  transition: color 0.3s ease, background 0.3s ease; /* Smooth hover effects */
 }
 
+/* Hover effect for links */
 .nav-link:hover {
-  background: #34495e; /* Slightly darker shade on hover */
-  transform: scale(1.05);
+  color: #1abc9c; /* Teal color on hover */
 }
 
+/* Active link styling */
 .nav-link.active {
-  background: #1abc9c; /* Teal color for active link */
-  font-weight: bold;
-  border-bottom: none; /* No bottom border */
+  color: #1abc9c; /* Teal color for active link */
+  font-weight: bold; /* Bold text for active link */
 }
 
+/* Container for register and login buttons */
 .nav-buttons {
-  display: flex;
-  align-items: center;
+  display: flex; /* Display buttons horizontally */
+  align-items: center; /* Center buttons vertically */
 }
 
+/* Button styling */
 .nav-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none; /* Removes underline */
-  font-size: 16px;
-  background: #e74c3c; /* Red color for buttons */
-  padding: 10px 20px;
-  border-radius: 4px;
-  margin-left: 10px; /* Spacing between buttons */
-  transition: background 0.3s ease, transform 0.3s ease;
+  color: #ffffff; /* White text color */
+  background: #e74c3c; /* Red background color */
+  text-decoration: none; /* Remove underline from buttons */
+  font-size: 12px; /* Font size for buttons */
+  padding: 5px 10px; /* Padding around button text */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 10px; /* Space between buttons */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
 }
 
+/* Hover effect for buttons */
 .nav-button:hover {
-  background: #c0392b; /* Slightly darker shade on hover */
-  transform: scale(1.05);
+  background: #c0392b; /* Slightly darker red on hover */
+  transform: scale(1.05); /* Slight scaling effect on hover */
 }
+
+
 
 
 

@@ -26,6 +26,11 @@ function Nav() {
             <h1>Contact Us</h1>
           </Link>
         </li>
+        <li className='nav-item'>
+          <Link to="/sendpdf" className="nav-link">
+            <h1>Send Pdf</h1>
+          </Link>
+        </li>
       </ul>
       <div className="nav-buttons">
         <Link to="/regi" className="nav-button">
