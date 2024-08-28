@@ -8,6 +8,7 @@ import AddUser from "./Components/AddUser/AddUser";
 import UpdateUser from "./Components/UpdateUser/UpdateUser";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
+import Contactus from "./Components/ContactUs/Contactus";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/userdetails" element={<Users />} />
           <Route path="/regi" element={<Register />} />
           <Route path="/log" element={<Login />} />
+          <Route path="/conus" element={<ContactUs />} />
           <Route path="/userdetails/:id" element={<UpdateUser />} />
 
         </Routes>
